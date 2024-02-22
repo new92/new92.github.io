@@ -8,30 +8,30 @@
 </head>
 <body>
     <script>
-  function increaseUserCount() {
-    let count = localStorage.getItem('userCount');
-    if (!count) {
-      count = 1;
-    } else {
-      count = parseInt(count) + 1;
-    }
-    localStorage.setItem('userCount', count);
-    updateButton(count);
-  }
+      function increaseUserCount() {
+        let count = localStorage.getItem('userCount');
+        if (!count) {
+          count = 1;
+        } else {
+          count = parseInt(count) + 1;
+        }
+        localStorage.setItem('userCount', count);
+        updateButton(count);
+      }
+        
+      function updateButton(count) {
+        const button = document.getElementById('userCountButton');
+        button.textContent = `Users: ${count}`;
+      }
     
-  function updateButton(count) {
-    const button = document.getElementById('userCountButton');
-    button.textContent = `Users: ${count}`;
-  }
-
-  window.onload = function() {
-    let count = localStorage.getItem('userCount');
-    if (!count) {
-      count = 0;
-    }
-    updateButton(count);
-  };
-</script>
+      window.onload = function() {
+        let count = localStorage.getItem('userCount');
+        if (!count) {
+          count = 0;
+        }
+        updateButton(count);
+      };
+    </script>
     <center><h1><b><u>Hello world!</u></b></h1>
     <br>
     <button id="userCountButton" onclick="increaseUserCount()">Count me!</button></center>
