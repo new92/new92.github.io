@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>new92</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-<script>
+</head>
+<body>
+    <script>
   function increaseUserCount() {
     let count = localStorage.getItem('userCount');
     if (!count) {
@@ -30,8 +32,6 @@
     updateButton(count);
   };
 </script>
-</head>
-<body>
     <center><h1><b><u>Hello world!</u></b></h1>
     <br>
     <button id="userCountButton" onclick="increaseUserCount()">Count me!</button></center>
