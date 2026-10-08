@@ -1,39 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>new92</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spiros Panagiotou — Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f8fa;--ink:#161b22;--mute:#5b6572;--line:#dde1e7;--card:#fff;--accent:#27579a;--soft:#e9eff8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10141a;--ink:#e7eaef;--mute:#9aa5b3;--line:#262d37;--card:#161c24;--accent:#8cb3ee;--soft:#1b2634}}
+:root[data-theme="dark"]{--bg:#10141a;--ink:#e7eaef;--mute:#9aa5b3;--line:#262d37;--card:#161c24;--accent:#8cb3ee;--soft:#1b2634}
+*,*:before,*:after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "Source Sans 3",system-ui,sans-serif}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;margin:0;line-height:1.15}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav .wrap{display:flex;gap:28px;align-items:center;height:54px;overflow-x:auto;white-space:nowrap;font-size:15px}
+nav b{font-family:"Source Serif 4",Georgia,serif;margin-right:auto;font-size:17px}
+nav a{color:var(--mute);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--accent)}
+header{padding:80px 0 56px}
+h1{font-size:clamp(40px,7vw,64px);letter-spacing:-.015em}
+.role{font-size:21px;color:var(--accent);margin:12px 0 0;font-weight:500}
+.lede{max-width:60ch;color:var(--mute);font-size:19px;margin:20px 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 22px;border:1px solid var(--line);border-radius:8px;text-decoration:none;font-weight:600;background:var(--card);color:var(--ink)}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.btn.main:hover{color:var(--bg);opacity:.9}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:52px;border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+.facts div{padding:20px 24px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-family:"Source Serif 4",Georgia,serif;font-size:30px;font-weight:600}
+.facts span{color:var(--mute);font-size:15px}
+section{display:grid;grid-template-columns:190px 1fr;gap:16px 40px;padding:48px 0;border-top:1px solid var(--line)}
+section>h2{font-size:22px;color:var(--mute);font-weight:500}
+.proj{padding:20px 0;border-bottom:1px solid var(--line)}
+.proj:first-child{padding-top:0}
+.proj:last-child{border-bottom:0;padding-bottom:0}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.proj h3{font-size:23px}
+.proj h3 small{font:600 13px "Source Sans 3",sans-serif;background:var(--soft);color:var(--accent);border-radius:999px;padding:2px 11px;margin-left:10px;vertical-align:3px}
+.stat{color:var(--mute);font-size:15px;white-space:nowrap}
+.proj p{margin:6px 0 8px;color:var(--mute);max-width:62ch}
+.proj a{font-weight:500;font-size:15px}
+.group{margin-bottom:24px}
+.group:last-child{margin-bottom:0}
+.group h3{font-size:15px;font-family:"Source Sans 3",sans-serif;font-weight:600;color:var(--mute);margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:3px 13px;font-size:15px}
+.tags a{text-decoration:none}
+.plat{display:grid;grid-template-columns:130px 1fr;gap:8px 12px;margin:0}
+.plat dt{color:var(--mute)}
+.plat dd{margin:0}
+footer{padding:36px 0 64px;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
+@media (max-width:760px){header{padding:48px 0 40px}.facts{grid-template-columns:repeat(2,1fr)}.facts div:nth-child(2){border-right:0}.facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}section{grid-template-columns:1fr;padding:36px 0}}
+@media print{nav,.cta{display:none}body{background:#fff;color:#000}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-    <script>
-      function increaseUserCount() {
-        let count = localStorage.getItem('userCount');
-        if (!count) {
-          count = 1;
-        } else {
-          count = parseInt(count) + 1;
-        }
-        localStorage.setItem('userCount', count);
-        updateButton(count);
-      }
-        
-      function updateButton(count) {
-        const button = document.getElementById('userCountButton');
-        button.textContent = `Visitors: ${count}`;
-      }
-    
-      window.onload = function() {
-        let count = localStorage.getItem('userCount');
-        if (!count) {
-          count = 0;
-        }
-        updateButton(count);
-      };
-    </script>
-    <center><h1><b><u>Hello world!</u></b></h1>
-    <br>
-    <button id="userCountButton" onclick="increaseUserCount()"></button></center>
+<nav><div class="wrap"><b>Spiros Panagiotou</b><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#profiles">Profiles</a><a href="#contact">Contact</a></div></nav>
+<div class="wrap">
+<header>
+<h1>Spiros Panagiotou</h1>
+<p class="role">Python developer</p>
+<p class="lede">I build automation tools, API clients and small web apps in Python. I'm also active in security through HackTheBox and HackerOne, and I'm currently studying and learning C++.</p>
+<div class="cta">
+<a class="btn main" href="https://github.com/new92">View GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/spiros-panagiotou-04087b289/">LinkedIn</a>
+<a class="btn" href="mailto:new92github@gmail.com">Email me</a>
+</div>
+<div class="facts">
+<div><b>17</b><span>public repositories</span></div>
+<div><b>720+</b><span>stars on pinned repos</span></div>
+<div><b>99</b><span>GitHub followers</span></div>
+<div><b>PyPI</b><span>published packages</span></div>
+</div>
+</header>
+
+<section id="projects">
+<h2>Projects</h2>
+<div>
+<div class="proj"><div class="top"><h3>instatools<small>Most starred</small></h3><span class="stat">339 stars · 35 forks</span></div><p>A collection of automation tools for Instagram, written in Python. InstaTools 2.0 is announced.</p><a href="https://github.com/new92/instatools">View repository</a></div>
+<div class="proj"><div class="top"><h3>igfi<small>Most forked</small></h3><span class="stat">318 stars · 81 forks</span></div><p>InstaGram Followers Increaser, a Python tool for growing an Instagram following.</p><a href="https://github.com/new92/igfi">View repository</a></div>
+<div class="proj"><div class="top"><h3>trackr<small>Latest</small></h3><span class="stat">1 star · MIT license</span></div><p>Real-time Thessaloniki Metro status dashboard. Shows which stations and elevators are working, supports several languages and finds your nearest station by location.</p><a href="https://github.com/new92/trackr">View repository</a></div>
+<div class="proj"><div class="top"><h3>iam</h3><span class="stat">50 stars · 13 forks</span></div><p>Instagram account manager for managing an account remotely.</p><a href="https://github.com/new92/iam">View repository</a></div>
+<div class="proj"><div class="top"><h3>netwix</h3><span class="stat">7 stars · 5 forks</span></div><p>Python client for Netflix. Enter a Netflix ID to get data on movies and TV shows.</p><a href="https://github.com/new92/netwix">View repository</a></div>
+<div class="proj"><div class="top"><h3>pytrail</h3><span class="stat">3 stars · 2 forks</span></div><p>Python module that searches for and fetches the latest movie trailers through a simple interface.</p><a href="https://github.com/new92/pytrail">View repository</a></div>
+<div class="proj"><div class="top"><h3>php</h3><span class="stat">3 stars · 1 fork</span></div><p>Personal PHP scripts and projects.</p><a href="https://github.com/new92/php">View repository</a></div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div>
+<div class="group"><h3>Languages</h3><ul class="tags"><li>Python</li><li>C</li><li>C++ (learning)</li><li>Java</li><li>PHP</li><li>Bash</li><li>HTML</li><li>CSS</li></ul></div>
+<div class="group"><h3>Frameworks and data</h3><ul class="tags"><li>Flask</li><li>Django</li><li>Selenium</li><li>MySQL</li><li>SQLite</li></ul></div>
+<div class="group"><h3>Tools and platforms</h3><ul class="tags"><li>Kali Linux</li><li>Ubuntu</li><li>Windows</li><li>Git</li><li>GitHub</li><li>GitLab</li><li>Postman</li><li>VS Code</li><li>Visual Studio</li><li>IntelliJ IDEA</li></ul></div>
+</div>
+</section>
+
+<section id="profiles">
+<h2>Profiles and recognition</h2>
+<div>
+<div class="group"><h3>Online profiles</h3>
+<dl class="plat"><dt>HackTheBox</dt><dd><a href="https://profile.hackthebox.com/profile/019cc94c-22b1-71e7-af81-07eef812fb02">View profile</a></dd>
+<dt>HackerOne</dt><dd><a href="https://hackerone.com/anub1sh4ck">anub1sh4ck</a></dd>
+<dt>HackerRank</dt><dd><a href="https://www.hackerrank.com/new92">new92</a></dd>
+<dt>LeetCode</dt><dd><a href="https://www.leetcode.com/new92">new92</a></dd>
+<dt>PyPI</dt><dd><a href="https://pypi.org/user/new92/">new92</a></dd></dl></div>
+<div class="group"><h3>GitHub achievements</h3><ul class="tags"><li>Starstruck ×2</li><li>Pull Shark ×2</li><li>Galaxy Brain</li><li>YOLO</li><li>Quickdraw</li></ul></div>
+</div>
+</section>
+
+<footer id="contact">Contact: <a href="mailto:new92github@gmail.com">new92github@gmail.com</a> · <a href="https://www.linkedin.com/in/spiros-panagiotou-04087b289/">LinkedIn</a> · <a href="https://github.com/new92">GitHub</a></footer>
+</div>
 </body>
 </html>
