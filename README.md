@@ -1,6 +1,6 @@
 # Portfolio website
 
-Personal developer portfolio for Spiros Panagiotou. It is a single static HTML page with no build step, no framework and no dependencies to install.
+Personal developer portfolio for New92. It is a single static HTML page with no build step, no framework and no dependencies to install.
 
 ## What's on the page
 
@@ -104,4 +104,4 @@ Then add a matching link to the `<nav>` at the top of the page.
 
 ## Contact
 
-[new92github@gmail.com](mailto:new92github@gmail.com) · [GitHub](https://github.com/new92) · [LinkedIn](https://www.linkedin.com/in/spiros-panagiotou-04087b289/)
+[new92github@gmail.com](mailto:new92github@gmail.com) · [GitHub](https://github.com/new92)
